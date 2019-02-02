@@ -30,6 +30,7 @@
 
 <script>
 import * as math from "mathjs";
+import debounce from "lodash.debounce";
 import Mybutton from "./components/Mybutton";
 import { keys as _keys } from "./constant.js";
 
@@ -50,13 +51,13 @@ export default {
   },
 
   methods: {
-    updateAns: function() {
+    updateAns: debounce(function() {
       try {
         this.ans = math.eval(this.input);
       } catch (error) {
         this.ans = "error";
       }
-    },
+    }, 300),
     uploadResults: function() {
       if (this.ans != "error")
         this.results.unshift({
