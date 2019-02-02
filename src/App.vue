@@ -1,23 +1,28 @@
 <template>
   <div id="app">
-    <input
-      v-model="input"
-      @paste.prevent
-      @keypress.enter="uploadResults"
-      @keypress.exact="handleinput"
-      placeholder="Enter an expression to calculate"
-    >
+    <div class="result-container">
+      <input
+        class="expression"
+        v-model="input"
+        @paste.prevent
+        @keypress.enter="uploadResults"
+        @keypress.exact="handleinput"
+        placeholder="Enter an expression to calculate"
+      >
+      <div class="ans">
+        <h2 v-show="ans">= {{ ans }}</h2>
+      </div>
 
-    <h2 v-show="ans">= {{ ans }}</h2>
-
-    <div>
-      <h3
-        v-for="result in results"
-        :key="result.ID"
-      >{{result.input}} = {{result.output}}</h3>
+      <div class="results">
+        <h3
+          v-for="result in results"
+          :key="result.ID"
+        >{{result.input}} = {{result.output}}</h3>
+      </div>
     </div>
 
-    <div>
+    <img class="logo" alt="Vue logo" src="./assets/logo.png">
+    <div class="button-container">
       <Mybutton
         v-for="key in keys"
         :key="key.display"
@@ -91,12 +96,62 @@ export default {
 </script>
 
 <style lang="scss">
+* {
+  box-sizing: border-box;
+}
+
+//* {border: 1px dashed gray;}
 #app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 1fr 1fr;
+
+  height: 100vh;
+
+  font-family: "Courier New", Courier, monospace;
+
+  background-color: gray;
+}
+
+.result-container {
+  grid-column: 2 / span 1;
+  grid-row: 1 / span 2;
+
+  background-color: rgb(255, 166, 166);
+}
+
+.button-container {
+  grid-column: 1 / span 1;
+  grid-row: 2 / span 1;
+
+  width: 100%;
+  background-color: green;
+}
+
+.logo {
+  display: block; // -- 讓圖片置中
+  margin: auto; // --^
+
+  grid-column: 1 / span 1;
+  grid-row: 1 / span 1;
+
+  width: 100%;
+  background-color: rgb(112, 91, 91);
+}
+
+.expression {
+  height: 20%;
+  width: 100%;
+}
+
+.ans {
+  height: 10%;
+}
+
+.results {
+  height: 70%;
+
+  background-color: rgb(109, 253, 90);
+  overflow: hidden;
 }
 </style>

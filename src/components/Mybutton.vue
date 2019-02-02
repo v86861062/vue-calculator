@@ -1,7 +1,5 @@
 <template>
-  <div class="fuck">
-    <button class="mybutton" @click="handleClick">{{display}}</button>
-  </div>
+  <button class="mybutton" @click="handleClick">{{display}}</button>
 </template>
 
 <script>
@@ -22,7 +20,9 @@ export default {
 <style lang="scss">
 .mybutton {
   background-color: red;
-  width: 50px;
+  width: 25%;
+  height: 20%;
+  
   color: yellow;
 }
 </style>
