@@ -10,17 +10,21 @@
 
     <h2 v-show="ans">= {{ ans }}</h2>
 
-    <h3
-      v-for="result in results"
-      :key="result.ID"
-    >{{result.input}} = {{result.output}}</h3>
+    <div>
+      <h3
+        v-for="result in results"
+        :key="result.ID"
+      >{{result.input}} = {{result.output}}</h3>
+    </div>
 
-    <Mybutton
-      v-for="key in keys"
-      :key="key.display"
-      :display="key.display"
-      :onClick="handleClick"
-    />
+    <div>
+      <Mybutton
+        v-for="key in keys"
+        :key="key.display"
+        :display="key.display"
+        :onClick="handleClick"
+      />
+    </div>
   </div>
 </template>
 
