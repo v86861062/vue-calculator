@@ -106,7 +106,7 @@ export default {
   grid-template-columns: 40% 60%;
   grid-template-rows: 1fr 1fr;
 
-  height: 100vh;
+  height: 95vh;
 
   font-family: "Courier New", Courier, monospace;
 
@@ -135,7 +135,7 @@ export default {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
 
-  width: 100%;
+  width: 95%;
   background-color: rgb(112, 91, 91);
 }
 
