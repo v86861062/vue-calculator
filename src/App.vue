@@ -10,7 +10,7 @@
         placeholder="Enter an expression to calculate"
       >
       <div class="ans">
-        <h2 v-show="ans">= {{ ans }}</h2>
+        <label v-show="ans">= {{ ans }}</label>
       </div>
 
       <div class="results">
@@ -100,7 +100,11 @@ export default {
   box-sizing: border-box;
 }
 
-//* {border: 1px dashed gray;}
+//* {border: 1px dashed gray;}\
+html {
+  font-size: 16px;
+}
+
 #app {
   display: grid;
   grid-template-columns: 40% 60%;
@@ -109,7 +113,7 @@ export default {
   height: 95vh;
 
   font-family: "Courier New", Courier, monospace;
-
+  font-size: 1.5rem;
   background-color: gray;
 }
 
