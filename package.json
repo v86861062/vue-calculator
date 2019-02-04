@@ -12,6 +12,7 @@
   "dependencies": {
     "lodash.debounce": "^4.0.8",
     "mathjs": "^5.4.2",
+    "normalize.css": "^8.0.1",
     "vue": "^2.5.22"
   },
   "devDependencies": {

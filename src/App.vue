@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import "normalize.css";
 import * as math from "mathjs";
 import debounce from "lodash.debounce";
 import Mybutton from "./components/Mybutton";
