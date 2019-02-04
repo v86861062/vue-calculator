@@ -22,7 +22,14 @@ export default {
   background-color: red;
   width: 25%;
   height: 20%;
-  
+
+  border: 5px gray outset;
+
   color: yellow;
+
+  &:active {
+    border: 5px gray solid;
+    color: orange;
+  }
 }
 </style>
