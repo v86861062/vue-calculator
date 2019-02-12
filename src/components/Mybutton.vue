@@ -18,18 +18,20 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../constant";
+
 .mybutton {
-  background-color: red;
+  background-color: $button-color;
   width: 25%;
   height: 20%;
 
-  border: 5px gray outset;
+  border: 5px $button-border-color outset;
 
-  color: yellow;
+  color: $button-text-color;
 
   &:active {
-    border: 5px gray solid;
-    color: orange;
+    border: 5px $button-border-color solid;
+    color: $button-text-active-color;
   }
 }
 </style>

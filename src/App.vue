@@ -97,6 +97,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import "./constant";
+
 * {
   box-sizing: border-box;
 }
@@ -115,14 +117,11 @@ html {
 
   font-family: "Courier New", Courier, monospace;
   font-size: 1.5rem;
-  background-color: gray;
 }
 
 .result-container {
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
-
-  background-color: rgb(255, 166, 166);
 }
 
 .button-container {
@@ -130,7 +129,6 @@ html {
   grid-row: 2 / span 1;
 
   width: 100%;
-  background-color: green;
 }
 
 .logo {
@@ -144,21 +142,32 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
+  background-color: $logo-background;
 }
 
 .expression {
   height: 20%;
   width: 100%;
+  color: $expression-text-color;
+  background-color: $expression-color;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: $expression-text-color;
+  opacity: 1; /* Firefox */
 }
 
 .ans {
   height: 10%;
+  color: $ans-text-color;
+  background-color: $ans-color;
 }
 
 .results {
   height: 70%;
 
-  background-color: rgb(109, 253, 90);
+  color: $results-text-color;
+  background-color: $results-color;
   overflow: hidden;
 }
 
