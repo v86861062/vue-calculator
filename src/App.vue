@@ -21,7 +21,7 @@
       </div>
     </div>
 
-    <img class="logo" alt="Vue logo" src="./assets/logo.png">
+    <div class="logo"/>
     <div class="button-container">
       <Mybutton
         v-for="key in keys"
@@ -103,7 +103,7 @@ export default {
 
 //* {border: 1px dashed gray;}\
 html {
-  font-size: 16px;
+  font-size: calc(16px + 1vw);
 }
 
 #app {
@@ -134,14 +134,16 @@ html {
 }
 
 .logo {
-  display: block; // -- 讓圖片置中
-  margin: auto; // --^
-
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
 
-  width: 95%;
-  background-color: rgb(112, 91, 91);
+  max-width: 100%;
+  max-height: 100%;
+
+  background-image: url("./assets/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .expression {
@@ -158,5 +160,21 @@ html {
 
   background-color: rgb(109, 253, 90);
   overflow: hidden;
+}
+
+@media screen and (orientation: portrait) {
+  .logo {
+    display: none;
+  }
+
+  .result-container {
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+  }
+
+  .button-container {
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 1;
+  }
 }
 </style>
