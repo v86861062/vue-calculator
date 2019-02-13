@@ -75,9 +75,14 @@ export default {
       this.resultsCount++;
       this.input = "";
     },
+    clearResults: function() {
+      this.results = [];
+    },
+
     handleClick: function(str) {
-      if (str != "=") this.input += str;
-      else this.uploadResults();
+      if (str == "=") this.uploadResults();
+      else if (str == "AC") this.clearResults();
+      else this.input += str;
     },
     handleinput: function(e) {
       for (const k of this.keys) {

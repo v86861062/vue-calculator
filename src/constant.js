@@ -1,4 +1,5 @@
 export const keys = [
+  { key: "Delete", display: "AC" },
   { key: "(", display: "(" },
   { key: ")", display: ")" },
   { key: "^", display: "^" },
