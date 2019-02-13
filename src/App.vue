@@ -160,12 +160,19 @@ html {
 }
 
 .ans {
+  /* vertical align center */
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
   height: 10%;
   color: $ans-text-color;
   background-color: $ans-color;
 }
 
 .results {
+  padding: 0 2%;
   height: 70%;
   color: $results-text-color;
   background-color: $results-color;
