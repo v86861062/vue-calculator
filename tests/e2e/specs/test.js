@@ -45,6 +45,15 @@ describe("Basic function Test", () => {
 
     cy.get(".results").should("be.empty")
   })
+
+  it("Should display Error", () => {
+    cy.visit("/")
+
+    cy.get("input").type("5+-*/")
+    cy.wait(500)
+
+    cy.get(".ans").contains("= error")
+  })
 })
 
 describe("Abnormal use cases", () => {
