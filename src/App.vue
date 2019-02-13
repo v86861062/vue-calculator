@@ -140,7 +140,7 @@ html {
   grid-row: 1 / span 1;
   max-width: 100%;
   max-height: 100%;
-  background-image: url("./assets/logo.png");
+  background-image: url("./assets/logo.svg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
