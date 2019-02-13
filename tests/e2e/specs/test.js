@@ -29,6 +29,22 @@ describe("Basic function Test", () => {
     cy.get("input").type("{enter}")
     cy.contains(`5^9 = ${Math.pow(5, 9)}`)
   })
+
+  it("Should clear results history", () => {
+    cy.visit("/")
+
+    cy.get("input").type("5+6")
+    cy.wait(500)
+    cy.get("input").type("{enter}")
+
+    cy.get("input").type("7-8")
+    cy.wait(500)
+    cy.get("input").type("{enter}")
+
+    clickButton("AC")
+
+    cy.get(".results").should("be.empty")
+  })
 })
 
 describe("Abnormal use cases", () => {
