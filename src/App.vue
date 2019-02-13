@@ -65,7 +65,7 @@ export default {
       }
     }, 300),
     uploadResults: function() {
-      if (this.ans != "error")
+      if (this.ans != "error" && this.input != "")
         this.results.unshift({
           input: this.input,
           output: this.ans,
