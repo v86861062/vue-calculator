@@ -9,6 +9,7 @@ export default {
     display: { type: String, required: true },
     onClick: { type: Function, required: true }
   },
+
   methods: {
     handleClick: function() {
       this.onClick(this.display);
@@ -21,13 +22,11 @@ export default {
 @import "../constant";
 
 .mybutton {
-  background-color: $button-color;
   width: 25%;
   height: 20%;
-
   border: 5px $button-border-color outset;
-
   color: $button-text-color;
+  background-color: $button-color;
 
   &:active {
     border: 5px $button-border-color solid;

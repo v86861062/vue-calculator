@@ -64,6 +64,7 @@ export default {
         this.ans = "error";
       }
     }, 300),
+
     uploadResults: function() {
       if (this.ans != "error" && this.input != "")
         this.results.unshift({
@@ -75,6 +76,7 @@ export default {
       this.resultsCount++;
       this.input = "";
     },
+
     clearResults: function() {
       this.results = [];
     },
@@ -84,6 +86,7 @@ export default {
       else if (str == "AC") this.clearResults();
       else this.input += str;
     },
+
     handleinput: function(e) {
       for (const k of this.keys) {
         if (e.key == k.key) return true;
@@ -108,7 +111,6 @@ export default {
   box-sizing: border-box;
 }
 
-//* {border: 1px dashed gray;}\
 html {
   font-size: calc(16px + 1vw);
 }
@@ -117,9 +119,7 @@ html {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: 1fr 1fr;
-
   height: 95vh;
-
   font-family: "Courier New", Courier, monospace;
   font-size: 1.5rem;
 }
@@ -132,17 +132,14 @@ html {
 .button-container {
   grid-column: 1 / span 1;
   grid-row: 2 / span 1;
-
   width: 100%;
 }
 
 .logo {
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
-
   max-width: 100%;
   max-height: 100%;
-
   background-image: url("./assets/logo.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -170,7 +167,6 @@ html {
 
 .results {
   height: 70%;
-
   color: $results-text-color;
   background-color: $results-color;
   overflow: hidden;
