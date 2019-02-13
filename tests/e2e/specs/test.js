@@ -31,6 +31,17 @@ describe("Basic function Test", () => {
   })
 })
 
+describe("Abnormal use cases", () => {
+  it("should not update results", () => {
+    cy.visit("/")
+
+    clickButton("=")
+    clickButton("=")
+    clickButton("=")
+    cy.get(".results").should("be.empty")
+  })
+})
+
 function clickButton(name) {
   cy.get("button")
     .contains(name)
