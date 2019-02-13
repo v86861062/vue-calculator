@@ -136,6 +136,7 @@ html {
 }
 
 .logo {
+  padding: 5%;
   grid-column: 1 / span 1;
   grid-row: 1 / span 1;
   max-width: 100%;
@@ -145,6 +146,7 @@ html {
   background-position: center;
   background-size: contain;
   background-color: $logo-background;
+  background-origin: content-box;
 }
 
 .expression {
