@@ -12,10 +12,7 @@ describe("Smoke Test", () => {
 
 describe("Basic function Test", () => {
   it("Use mouse to enter an expression", () => {
-    clickButton("1")
-    clickButton("2")
-    clickButton("×")
-    clickButton("3")
+    clickButtons("12×3")
     waitForResult()
     clickButton("=")
 
@@ -73,6 +70,12 @@ function clickButton(name) {
   cy.get("button")
     .contains(name)
     .click()
+}
+
+function clickButtons(string) {
+  for (let s of string) {
+    clickButton(s)
+  }
 }
 
 function waitForResult() {
