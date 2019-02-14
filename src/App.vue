@@ -179,6 +179,7 @@ html {
   height: 10%;
   color: $ans-text-color;
   background-color: $ans-color;
+  font-weight: bold;
 }
 
 .results {
