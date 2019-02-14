@@ -24,9 +24,9 @@
     <div class="logo"/>
     <div class="button-container">
       <Mybutton
-        v-for="key in keys"
-        :key="key.display"
-        :display="key.display"
+        v-for="button in buttons"
+        :key="button.display"
+        :display="button.display"
         :onClick="handleClick"
       />
     </div>
@@ -38,7 +38,7 @@ import "normalize.css";
 import * as math from "mathjs";
 import debounce from "lodash.debounce";
 import Mybutton from "./components/Mybutton";
-import { keys as _keys } from "./constant.js";
+import { buttons as _buttons } from "./constant.js";
 
 export default {
   name: "app",
@@ -52,7 +52,7 @@ export default {
       ans: "",
       results: [],
       resultsCount: 0,
-      keys: _keys
+      buttons: _buttons
     };
   },
 
@@ -89,8 +89,8 @@ export default {
     },
 
     handleinput: function(e) {
-      for (const k of this.keys) {
-        if (e.key == k.key) return true;
+      for (const button of this.buttons) {
+        if (e.key == button.key) return true;
       }
       /* 這是為了防止輸入文字 */
       e.preventDefault();

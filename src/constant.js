@@ -1,4 +1,4 @@
-export const keys = [
+export const buttons = [
   { key: "", display: "AC" },
   { key: "(", display: "(" },
   { key: ")", display: ")" },
