@@ -14,20 +14,20 @@ describe("Basic function Test", () => {
   it("Use mouse to enter an expression", () => {
     clickButton("1")
     clickButton("2")
-    clickButton("+")
+    clickButton("×")
     clickButton("3")
     waitForResult()
     clickButton("=")
 
-    cy.contains("12+3 = 15")
+    cy.contains("12×3 = 36")
   })
 
   it("Use keyboard to enter an expression", () => {
-    enterExpression("5^9")
+    enterExpression("9/9")
     waitForResult()
     enterExpression("{enter}")
 
-    cy.contains(`5^9 = ${Math.pow(5, 9)}`)
+    cy.contains(`9/9 = 1`)
   })
 
   it("Should clear results history", () => {

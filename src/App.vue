@@ -59,7 +59,8 @@ export default {
   methods: {
     updateAns: debounce(function() {
       try {
-        this.ans = math.eval(this.input);
+        const formatedInput = this.formatInput(this.input);
+        this.ans = math.eval(formatedInput);
       } catch (error) {
         this.ans = "error";
       }
@@ -93,6 +94,13 @@ export default {
       }
       /* 這是為了防止輸入文字 */
       e.preventDefault();
+    },
+
+    formatInput: function(str) {
+      return str.replace(/÷|×/g, function(match) {
+        if (match === "÷") return "/";
+        else if (match === "×") return "*";
+      });
     }
   },
 
