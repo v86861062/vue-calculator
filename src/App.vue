@@ -78,13 +78,14 @@ export default {
       this.input = "";
     },
 
-    clearResults: function() {
+    reset: function() {
       this.results = [];
+      this.input = "";
     },
 
     handleClick: function(str) {
       if (str == "=") this.uploadResults();
-      else if (str == "AC") this.clearResults();
+      else if (str == "AC") this.reset();
       else this.input += str;
     },
 

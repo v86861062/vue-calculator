@@ -30,7 +30,7 @@ describe("Basic function Test", () => {
     cy.contains(`9/9 = 1`)
   })
 
-  it("Should clear results history", () => {
+  it("Should clear expression and results history, ", () => {
     enterExpression("5+6")
     waitForResult()
     enterExpression("{enter}")
@@ -39,8 +39,11 @@ describe("Basic function Test", () => {
     waitForResult()
     enterExpression("{enter}")
 
+    enterExpression("123")
+
     clickButton("AC")
 
+    cy.get(".expression").should("have.value", "")
     cy.get(".results").should("be.empty")
   })
 
