@@ -10,7 +10,7 @@
         placeholder="Enter an expression to calculate"
       >
       <div class="ans">
-        <label v-show="ans">= {{ ans }}</label>
+        <label v-show="isNeedShowAnswer">= {{ ans }}</label>
       </div>
 
       <div class="results">
@@ -102,6 +102,12 @@ export default {
         if (match === "÷") return "/";
         else if (match === "×") return "*";
       });
+    }
+  },
+
+  computed: {
+    isNeedShowAnswer: function() {
+      return typeof this.ans == "number" ? true : false;
     }
   },
 
