@@ -1,5 +1,5 @@
 export const keys = [
-  { key: "Delete", display: "AC" },
+  { key: "", display: "AC" },
   { key: "(", display: "(" },
   { key: ")", display: ")" },
   { key: "^", display: "^" },
@@ -17,6 +17,6 @@ export const keys = [
   { key: "-", display: "−" },
   { key: "0", display: "0" },
   { key: ".", display: "." },
-  { key: "Enter", display: "=" },
+  { key: "", display: "=" },
   { key: "+", display: "+" }
 ]
