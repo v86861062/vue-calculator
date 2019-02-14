@@ -14,7 +14,7 @@ export const buttons = [
   { key: "1", display: "1" },
   { key: "2", display: "2" },
   { key: "3", display: "3" },
-  { key: "-", display: "−" },
+  { key: "-", display: "-" },
   { key: "0", display: "0" },
   { key: ".", display: "." },
   { key: "", display: "=" },

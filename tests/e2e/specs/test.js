@@ -50,6 +50,13 @@ describe("Basic function Test", () => {
 
     cy.get(".ans").contains("= error")
   })
+
+  it("Use all symbol of operation", () => {
+    clickButtons("5+(1-2)×3÷2")
+    waitForResult()
+
+    cy.get(".ans").contains("3.5")
+  })
 })
 
 describe("Abnormal use cases", () => {
