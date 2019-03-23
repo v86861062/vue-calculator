@@ -126,6 +126,10 @@ export default {
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 html {
   font-size: calc(16px + 1vw);
 }
@@ -134,7 +138,7 @@ html {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-template-rows: 1fr 1fr;
-  height: 95vh;
+  height: 100%;
   font-family: "Courier New", Courier, monospace;
   font-size: 1.5rem;
 }

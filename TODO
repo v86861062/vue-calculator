@@ -10,7 +10,7 @@ Todo:
   ☐ Bug: Enter按太快，計算還沒完成就更新結果
   ✔ Bug: 答案是0時 不會顯示 :( @done(19-02-14 14:27)
   ☐ 限制結果的小數位
-  ☐ Android Chrome 100VH 問題
+  ✔ Android Chrome 100VH 問題 @done(19-03-23 16:21)
   
 
   
