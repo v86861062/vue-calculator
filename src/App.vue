@@ -153,6 +153,7 @@ html {
 .result-container {
   grid-column: 2 / span 1;
   grid-row: 1 / span 2;
+  overflow: hidden;
 }
 
 .button-container {
