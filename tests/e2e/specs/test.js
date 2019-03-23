@@ -67,6 +67,13 @@ describe("Abnormal use cases", () => {
 
     cy.get(".results").should("be.empty")
   })
+
+  it("Should only 2 digits after the decimal point", () => {
+    clickButtons("7÷3")
+    waitForResult()
+
+    cy.get(".ans").should($ans => expect($ans).to.have.text("= 2.33"))
+  })
 })
 
 function enterExpression(str) {

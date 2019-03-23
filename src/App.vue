@@ -60,7 +60,7 @@ export default {
     updateAns: debounce(function() {
       try {
         const formatedInput = this.formatInput(this.input);
-        this.ans = math.eval(formatedInput);
+        this.ans = math.format(math.eval(formatedInput), 3);
       } catch (error) {
         this.ans = "error";
       }
@@ -107,7 +107,13 @@ export default {
 
   computed: {
     isNeedShowAnswer: function() {
-      return typeof this.ans == "number" ? true : false;
+      if (this.input == "") {
+        return false;
+      } else if (this.ans === "undefined") {
+        /* math.format 輸入"" 會回傳 undefined 字串 :(*/
+        return false;
+      }
+      return true;
     }
   },
 
@@ -126,7 +132,8 @@ export default {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   height: 100%;
 }
 
