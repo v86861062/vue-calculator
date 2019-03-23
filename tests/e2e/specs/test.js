@@ -47,14 +47,14 @@ describe("Basic function Test", () => {
   it("Should display Error", () => {
     enterExpression("5+-*/")
     waitForResult()
-    
+
     expectAnsEqual("= error")
   })
 
   it("Use all symbol of operation", () => {
     clickButtons("5+(1-2)×3÷2")
     waitForResult()
-    
+
     expectAnsEqual("= 3.5")
   })
 })
@@ -73,6 +73,11 @@ describe("Abnormal use cases", () => {
     waitForResult()
 
     expectAnsEqual("= 2.33")
+  })
+
+  it("Should display results", () => {
+    clickButtons("1+1=")
+    cy.get(".results").should($ans => expect($ans).to.have.text("1+1 = 2"))
   })
 })
 

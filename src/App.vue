@@ -58,24 +58,31 @@ export default {
 
   methods: {
     updateAns: debounce(function() {
-      try {
-        const formatedInput = this.formatInput(this.input);
-        this.ans = math.format(math.eval(formatedInput), 3);
-      } catch (error) {
-        this.ans = "error";
-      }
+      this.ans = this.evalResult(this.input);
     }, 300),
 
     uploadResults: function() {
-      if (this.ans != "error" && this.input != "")
-        this.results.unshift({
-          input: this.input,
-          output: this.ans,
-          ID: this.resultsCount
-        });
+      this.ans = this.evalResult(this.input);
+
+      if (this.ans == "error" || this.input == "") return;
+
+      this.results.unshift({
+        input: this.input,
+        output: this.ans,
+        ID: this.resultsCount
+      });
 
       this.resultsCount++;
       this.input = "";
+    },
+
+    evalResult: function(input) {
+      try {
+        const formatedInput = this.formatInput(input);
+        return math.format(math.eval(formatedInput), 3);
+      } catch (error) {
+        return "error";
+      }
     },
 
     reset: function() {

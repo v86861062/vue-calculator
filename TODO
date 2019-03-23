@@ -7,7 +7,7 @@ Todo:
   ☐ expression能換行
   ✔ logo換成向量圖 @done(19-02-13 14:15)
   ☐ All clear按鈕目前無法用鍵盤控制 :(
-  ☐ Bug: Enter按太快，計算還沒完成就更新結果
+  ✔ Bug: Enter按太快，計算還沒完成就更新結果 @done(19-03-23 20:14)
   ✔ Bug: 答案是0時 不會顯示 :( @done(19-02-14 14:27)
   ✔ 限制結果的小數位 @done(19-03-23 17:34)
   ✔ Android Chrome 100VH 問題 @done(19-03-23 16:21)
